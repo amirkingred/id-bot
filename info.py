@@ -66,7 +66,7 @@ def query_text(query):
         name = query.from_user.first_name
         lname = query.from_user.last_name
         uid = query.from_user.id
-        info = types.InlineQueryResultArticle('1', '\xE2\x9C\x8F Your Info \xE2\x9C\x8F', types.InputTextMessageContent('*Username : @{}\nYour Last Name : {}\nYour Last Name : {}\nYour ID : {}*'.format(user,name,lname,uid), parse_mode="Markdown"))
+        info = types.InlineQueryResultArticle('1', '\xE2\x9C\x8F Your Info \xE2\x9C\x8F', types.InputTextMessageContent('*Username : @{}\nYour First Name : {}\nYour Last Name : {}\nYour ID : {}*'.format(user,name,lname,uid), parse_mode="Markdown"))
         pic = types.InlineQueryResultPhoto('2', 'http://vip.opload.ir/vipdl/95/3/negative23/photo-2016-06-09-01-09-41.jpg', 'http://vip.opload.ir/vipdl/95/3/negative23/photo-2016-06-09-01-09-41.jpg', input_message_content=types.InputTextMessageContent('@Taylor_Team'))
         bot.answer_inline_query(query.id, [info], cache_time="5")
     except Exception as user:

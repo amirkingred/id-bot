@@ -90,5 +90,5 @@ def id(m):  # info menu
 
 
 
-bot.polling()
+bot.polling(True)
 #end

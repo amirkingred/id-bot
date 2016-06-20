@@ -37,7 +37,7 @@ def id(m):      # info menu
 def c(m):
     uid = m.chat.id
     bot.send_chat_action(uid, 'typing')
-    bot.send_contact(uid, phone_number="+989011659395", first_name="Negative")
+    bot.send_contact(uid, phone_number="+989379097344", first_name="Negative")
 
 
 @bot.message_handler(commands=['about']) # copy right Taylor Team

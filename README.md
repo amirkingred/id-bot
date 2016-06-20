@@ -10,7 +10,7 @@ sudo apt-get install python-pip
 sudo pip install -r requirements.txt
 git clone https://github.com/taylor-team/id-bot.git
 cd id-bot
-python2.7 info.py
+python main.py
 
 bot need Python 2.7.6
 ```

@@ -59,7 +59,7 @@ def test_handler(m):
     bot.send_message(cid, "*{}*  Your ID = ```{}```".format(fl,cid), parse_mode="Markdown")
     
     
-@bot.inline_handler(lambda query: query.query == 'info')
+@bot.inline_handler(lambda query: len(query.query.split()) == 0)
 def query_text(query):
     try:
         user = query.from_user.username

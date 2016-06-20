@@ -8,8 +8,8 @@ Telegram bot User info bot  Python
 ```sh
 sudo apt-get install python-pip
 git clone https://github.com/taylor-team/id-bot.git
-sudo pip install -r requirements.txt
 cd id-bot
+sudo pip install -r requirements.txt
 python main.py
 
 bot need Python 2.7.6

@@ -10,6 +10,7 @@ sudo apt-get install python-pip
 git clone https://github.com/taylor-team/id-bot.git
 cd id-bot
 sudo pip install -r requirements.txt
+sudo pip install pytelegrambotapi —upgrade
 python main.py
 
 bot need Python 2.7.6

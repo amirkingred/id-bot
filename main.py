@@ -7,6 +7,7 @@ from telebot import types
 from telebot import util
 import sys
 import json
+import arrow
 import logging
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -67,8 +68,19 @@ def query_text(query):
         lname = query.from_user.last_name
         uid = query.from_user.id
         info = types.InlineQueryResultArticle('1', '\xE2\x9C\x8F Your Info \xE2\x9C\x8F', types.InputTextMessageContent('*Username : @{}\nYour First Name : {}\nYour Last Name : {}\nYour ID : {}*'.format(user,name,lname,uid), parse_mode="Markdown"))
-        pic = types.InlineQueryResultPhoto('2', 'http://vip.opload.ir/vipdl/95/3/negative23/photo-2016-06-09-01-09-41.jpg', 'http://vip.opload.ir/vipdl/95/3/negative23/photo-2016-06-09-01-09-41.jpg', input_message_content=types.InputTextMessageContent('@Taylor_Team'))
-        bot.answer_inline_query(query.id, [info], cache_time="5")
+        #pic = types.InlineQueryResultPhoto('2', 'http://vip.opload.ir/vipdl/95/3/negative23/photo-2016-06-09-01-09-41.jpg', 'http://vip.opload.ir/vipdl/95/3/negative23/photo-2016-06-09-01-09-41.jpg', input_message_content=types.InputTextMessageContent('@Taylor_Team'))
+        utc = arrow.utcnow()
+        c = utc.to('Asia/Tehran')
+        msgtehran = c.format('HH:mm:ss')
+        cam = utc.to('America/Los_Angeles')
+        msgam = cam.format('HH:mm:ss')
+        clon = utc.to('Europe/London')
+        msglon = clon.format('HH:mm:ss')
+        chng = utc.to('Asia/Hong_Kong')
+        msghng = chng.format('HH:mm:ss')
+        time_tmp = 'http://prek-8.com//images/time21.jpg'
+        timesend = types.InlineQueryResultArticle('2', 'Time / \xD8\xB3\xD8\xA7\xD8\xB9\xD8\xAA', types.InputTextMessageContent('`Tehran` : *{}*\n`America Los Angeles` : *{}*\n`London` : *{}*\n`Hong Kong` : *{}*'.format(msgtehran,msgam,msglon,msghng), parse_mode='Markdown'), thumb_url=time_tmp)
+        bot.answer_inline_query(query.id, [info, time_tmp], cache_time="5")
     except Exception as user:
         print(user)
 
